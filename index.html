@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="startClockButton" onclick="displayTime()">Start Clock</button>
+    <button id="stopClockButton" onclick="stopTime()">Stop Clock</button>
+    <div id="time"> </div>
+    <br>
+
+
+    <form action="transfer.html" method="get">
+        <input id="userName" type="text" name="userName" placeholder="Enter your user name here" value="Rana"/>
+        <input id="userPassword" type="password" name="userPassword" placeholder="password" value="123"/><br>
+        <input id="agreement" type="checkbox" name="agreement">
+        <a id="labelLink" href="#">
+            <label for="agreement">I agree to Terms and conditions</label>
+        </a><br>
+        <button onclick="login()">Login</button>
+    </form>
+    <br>
+
+    <a id="openAdvertising" href="#">Open Advertising</a>
+    <a id="closeAdvertising" href="#">Close Advertising</a>
+
+    <script>
+    document.getElementById("openAdvertising").onclick = function() {openAdvertisingAfter3Seconds()};
+    function openAdvertisingAfter3Seconds() {
+        setTimeout(openWindow,3000);
+    }
+    var openedWindow;
+    function openWindow(){
+        openedWindow = window.open('advertising.html','popupad','width=500,height=700');
+    }
+
+    document.getElementById("closeAdvertising").onclick = function() {closeWindow()};
+    function closeWindow() {
+        openedWindow.close();
+    }
+
+
+    document.getElementById("labelLink").onclick = function() {openTermsPage()};
+    function openTermsPage(){
+        openedWindow = window.open('TermsAndConditions.html','_blank');
+    }
+
+    </script>
+
+</body>
+</html>
